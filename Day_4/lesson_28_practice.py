@@ -25,9 +25,9 @@ def draw_bs_reps(data, func, size=1):
 
 def confinterval95(data, func, size=1):
     """
-    draw_bs_reps(data, func, size)
+    confidenceinterval95(data, func, size)
 
-    This function takes an array and returns a statistic.
+    This function takes an array and returns a 95 percent confidence interval.
     Examples that could be passed in as 'func' are:
         - np.mean
         - np.std
