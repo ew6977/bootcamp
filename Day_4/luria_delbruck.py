@@ -31,6 +31,7 @@ def draw_random_mutation(n_gen, r):
     #Initialize number of mutations
     n_mut=0
     for g in range(n_gen):
+        #This doesn't take into consideration mutations can occur that make cell lose immunity
         n_mut = 2*n_mut + np.random.binomial(2**g-2*n_mut, r)
     return n_mut
 
