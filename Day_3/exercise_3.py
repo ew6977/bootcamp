@@ -28,15 +28,36 @@ q18a_iptg_fc=q18a_data[:,1]
 plt.close()
 #plot the data
 
-plt.plot(wt_iptg_conc, wt_iptg_fc, markersize=20, marker='.', linestyle='none', alpha=0.5)
-plt.plot(q18m_iptg_conc, q18m_iptg_fc, markersize=20, marker='.', linestyle='none', alpha=0.5)
-plt.plot(q18a_iptg_conc, q18a_iptg_fc, markersize=20, marker='.', linestyle='none', alpha=0.5)
+plt.semilogx(wt_iptg_conc, wt_iptg_fc, markersize=20, marker='.', linestyle='none', alpha=0.5)
+plt.semilogx(q18m_iptg_conc, q18m_iptg_fc, markersize=20, marker='.', linestyle='none', alpha=0.5)
+plt.semilogx(q18a_iptg_conc, q18a_iptg_fc, markersize=20, marker='.', linestyle='none', alpha=0.5)
 plt.xlabel('IPTG (mM)')
 plt.ylabel('Fold change')
-plt.xscale('log')
 plt.title('IPTG conc (mM) vs. Fold Change')
-plt.show()
+
 
 #c) Write function to compute the theoretical fold change
 
-def foldchange(c, RK, KdA=0.017)
+def foldchange(c, RK, KdA=0.017, KdI=0.002, Kswitch=5.8):
+    numerator= RK * (1 + c / KdA)**2
+    denomenator= (1 + c / KdA)**2 + Kswitch*(1 + c / KdI)**2
+    fc= (1 + numerator / denomenator)**-1
+    return fc
+
+#d) Plot a smooth curve showing theoretical fold change
+
+#find min and max of iptg concs of 3 diff mutants
+all_conc= (wt_iptg_conc, q18m_iptg_conc, q18a_iptg_conc)
+conc_concat=np.concatenate(all_conc)
+conc_min=np.min(conc_concat)
+conc_max=np.max(conc_concat)
+log_conc_min= np.log10(conc_min)
+log_conc_max= np.log10(conc_max)
+
+iptg_theo_conc=np.logspace(log_conc_min, log_conc_max, num=100)
+
+plt.semilogx(iptg_theo_conc, foldchange(iptg_theo_conc, 141.5), linewidth=2)
+plt.semilogx(iptg_theo_conc, foldchange(iptg_theo_conc, 16.56), linewidth=2)
+plt.semilogx(iptg_theo_conc, foldchange(iptg_theo_conc, 1332), linewidth=2)
+
+plt.show()
