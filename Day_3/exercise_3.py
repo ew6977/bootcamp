@@ -60,4 +60,24 @@ plt.semilogx(iptg_theo_conc, foldchange(iptg_theo_conc, 141.5), linewidth=2)
 plt.semilogx(iptg_theo_conc, foldchange(iptg_theo_conc, 16.56), linewidth=2)
 plt.semilogx(iptg_theo_conc, foldchange(iptg_theo_conc, 1332), linewidth=2)
 
+# plt.show()
+plt.close()
+
+#e)
+#1)Write a function bohr_parameter
+def bohr_parameter(c, RK,KdA=0.017, KdI=0.002, Kswitch=5.8):
+    lnRK= np.log(RK)
+    numerator= (1 + c / KdA)**2
+    denomenator= (1 + c / KdA)**2 + Kswitch*(1 + c / KdI)**2
+    bohr_parameter= -lnRK- np.log(1 + numerator / denomenator)
+    return bohr_parameter
+#2 write fold change bohr function
+def fold_change_bohr(bohr_parameter):
+    fc= 1 / (1 + np.exp(-bohr_parameter))
+    return fc
+#3 generate values of bohr parameter ranging from -6 to 6
+negsixtosix= np.arange(-6,6)
+
+#4 Compute theoretical fold change as fxn of bohr_parameter
+plt.plot(negsixtosix, fold_change_bohr(negsixtosix), linewidth=2)
 plt.show()
