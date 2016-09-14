@@ -26,6 +26,7 @@ q18a_iptg_fc=q18a_data[:,1]
 
 #make sure previous plots have been closed
 plt.close()
+
 #plot the data
 
 plt.semilogx(wt_iptg_conc, wt_iptg_fc, markersize=20, marker='.', linestyle='none', alpha=0.5)
