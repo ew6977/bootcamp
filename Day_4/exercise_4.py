@@ -6,6 +6,7 @@ import seaborn as sns
 sns.set()
 
 #####Exercise 4.1 Long-term trends in hybridization of Darwin Finches#####
+##To improve, I should define functions for some of the things that I ended up doing over and over
 
 #a)Load each file into separate panda DataFrames
 df_1973 = pd.read_csv('../data/grant_1973.csv', comment='#')
