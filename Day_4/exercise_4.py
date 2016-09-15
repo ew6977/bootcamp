@@ -71,10 +71,11 @@ plt.show()
 plt.close()
 #e) Plot beak depth vs. beak width
 
-plt.plot(f_1987_depth, f_1987_length, marker='.', color= 'blue', markersize=7, linestyle='none', alpha=0.5)
-plt.plot(s_1987_depth, s_1987_length, marker='.', color='red', markersize=7, linestyle='none', alpha=0.5)
+plt.plot(f_1987_depth, f_1987_length, marker='.', color= 'blue', markersize=7, linestyle='none')
+plt.plot(s_1987_depth, s_1987_length, marker='.', color='red', markersize=7, linestyle='none')
 plt.xlabel('beak depth (mm)')
 plt.ylabel('beak width (mm)')
+plt.axis([6, 13, 8, 17])
 plt.show()
 
 #f) do part e again for all years
@@ -84,8 +85,8 @@ f_1973_length = df_all_beak_data.loc[(df_all_beak_data['species'] == 'fortis') &
 s_1973_depth = df_all_beak_data.loc[(df_all_beak_data['species'] == 'scandens') & (df_all_beak_data['year'] == '1973'), 'beak depth (mm)']
 s_1973_length = df_all_beak_data.loc[(df_all_beak_data['species'] == 'scandens') & (df_all_beak_data['year'] == '1973'), 'beak length (mm)']
 
-plt.plot(f_1973_depth, f_1973_length, marker='.', color= 'blue', markersize=7, linestyle='none', alpha=0.5)
-plt.plot(s_1973_depth, s_1973_length, marker='.', color='red', markersize=7, linestyle='none', alpha=0.5)
+plt.plot(f_1973_depth, f_1973_length, marker='.', color= 'blue', markersize=7, linestyle='none')
+plt.plot(s_1973_depth, s_1973_length, marker='.', color='red', markersize=7, linestyle='none')
 plt.xlabel('beak depth (mm)')
 plt.ylabel('beak width (mm)')
 plt.show()
@@ -95,8 +96,8 @@ f_1975_length = df_all_beak_data.loc[(df_all_beak_data['species'] == 'fortis') &
 s_1975_depth = df_all_beak_data.loc[(df_all_beak_data['species'] == 'scandens') & (df_all_beak_data['year'] == '1975'), 'beak depth (mm)']
 s_1975_length = df_all_beak_data.loc[(df_all_beak_data['species'] == 'scandens') & (df_all_beak_data['year'] == '1975'), 'beak length (mm)']
 
-plt.plot(f_1975_depth, f_1975_length, marker='.', color= 'blue', markersize=7, linestyle='none', alpha=0.5)
-plt.plot(s_1975_depth, s_1975_length, marker='.', color='red', markersize=7, linestyle='none', alpha=0.5)
+plt.plot(f_1975_depth, f_1975_length, marker='.', color= 'blue', markersize=7, linestyle='none')
+plt.plot(s_1975_depth, s_1975_length, marker='.', color='red', markersize=7, linestyle='none')
 plt.xlabel('beak depth (mm)')
 plt.ylabel('beak width (mm)')
 plt.show()
@@ -107,8 +108,8 @@ f_1991_length = df_all_beak_data.loc[(df_all_beak_data['species'] == 'fortis') &
 s_1991_depth = df_all_beak_data.loc[(df_all_beak_data['species'] == 'scandens') & (df_all_beak_data['year'] == '1991'), 'beak depth (mm)']
 s_1991_length = df_all_beak_data.loc[(df_all_beak_data['species'] == 'scandens') & (df_all_beak_data['year'] == '1991'), 'beak length (mm)']
 
-plt.plot(f_1991_depth, f_1991_length, marker='.', color= 'blue', markersize=7, linestyle='none', alpha=0.5)
-plt.plot(s_1991_depth, s_1991_length, marker='.', color='red', markersize=7, linestyle='none', alpha=0.5)
+plt.plot(f_1991_depth, f_1991_length, marker='.', color= 'blue', markersize=7, linestyle='none')
+plt.plot(s_1991_depth, s_1991_length, marker='.', color='red', markersize=7, linestyle='none')
 plt.xlabel('beak depth (mm)')
 plt.ylabel('beak width (mm)')
 plt.show()
@@ -119,8 +120,8 @@ f_2012_length = df_all_beak_data.loc[(df_all_beak_data['species'] == 'fortis') &
 s_2012_depth = df_all_beak_data.loc[(df_all_beak_data['species'] == 'scandens') & (df_all_beak_data['year'] == '2012'), 'beak depth (mm)']
 s_2012_length = df_all_beak_data.loc[(df_all_beak_data['species'] == 'scandens') & (df_all_beak_data['year'] == '2012'), 'beak length (mm)']
 
-plt.plot(f_2012_depth, f_2012_length, marker='.', color= 'blue', markersize=7, linestyle='none', alpha=0.5)
-plt.plot(s_2012_depth, s_2012_length, marker='.', color='red', markersize=7, linestyle='none', alpha=0.5)
+plt.plot(f_2012_depth, f_2012_length, marker='.', color= 'blue', markersize=7, linestyle='none')
+plt.plot(s_2012_depth, s_2012_length, marker='.', color='red', markersize=7, linestyle='none')
 plt.xlabel('beak depth (mm)')
 plt.ylabel('beak width (mm)')
 plt.show()
