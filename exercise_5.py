@@ -35,7 +35,7 @@ for image in image_list:
 image_0_rgb= np.dstack(3 * [image_list[0] / image_list[0].max()])
 
 # Saturate red channel wherever there are white pixels in thresh image
-image_0_rgb[images_segmented[0] < 0, 1] = 1.0
+image_0_rgb[images_segmented[0] > 0, 1] = 1.0
 
 # Show the result
 with sns.axes_style('dark'):
