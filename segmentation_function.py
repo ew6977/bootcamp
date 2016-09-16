@@ -31,9 +31,9 @@ def uneven_illumination(image_filt, image, blur_radius):
     #Blur the image
     im_blur = skimage.filters.gaussian(image_filt, blur_radius)
     #Convert the original phase contrast image to a float
-    phase_float = skimage.img_as_float(image)
+    im_float = skimage.img_as_float(image_filt)
     #Subtract the blurred image from the original image to correct for uneven illumination
-    image_sub = phase_float - im_blur
+    image_sub = im_float - im_blur
     return image_sub
 
 def otsu_threshold(image_sub, microscopy='phase'):
