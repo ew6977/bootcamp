@@ -11,6 +11,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_style('dark')
 
+#Before using for real, may need to check about having a flipped operator.
+
 
 def hotpixel_begone(image, shape_pixels):
     """
